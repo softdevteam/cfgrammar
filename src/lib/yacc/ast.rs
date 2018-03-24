@@ -110,8 +110,7 @@ impl fmt::Display for GrammarValidationError {
 impl fmt::Display for Symbol {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            Symbol::Nonterm(ref s) => write!(f, "{}", s),
-            Symbol::Term(ref s)    => write!(f, "{}", s)
+            Symbol::Nonterm(ref s) | Symbol::Term(ref s) => write!(f, "{}", s)
         }
     }
 }
